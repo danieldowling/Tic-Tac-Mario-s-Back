@@ -1,0 +1,55 @@
+body {
+	background-image: url("http://th03.deviantart.net/fs10/PRE/i/2006/133/9/7/Idyllic_Mario_by_blendmaster.png");
+}
+
+h1 {
+	text-align: center;
+	color: gold;
+	background-color: white;
+	padding: 30px;
+	border-radius: 50px;
+	width: 80%;
+	margin: 0 auto;
+}
+
+#container {
+	display: flex;
+	margin: 0 auto;
+	width: 80%;
+}
+
+#container > div {flex: 1;}
+
+#board {
+	display: flex;
+	flex: 2 !important;
+	flex-wrap: wrap;
+	background-color: gold; 
+	margin-top: 45px;
+}
+
+.space {
+	justify-content: center;
+	width: 32.7%;
+	margin: 1.5px;
+	height: 150px;
+	vertical-align: middle;
+	background-image: url("http://th03.deviantart.net/fs10/PRE/i/2006/133/9/7/Idyllic_Mario_by_blendmaster.png");
+}
+
+#mario {
+	
+
+}
+
+#luigi {
+	
+}
+
+img{
+	margin: 0;
+	padding: 20px;
+	border-radius: 50px;
+	height: 200px;
+	width: 200px;
+}
