@@ -1,43 +1,69 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="css/normalize.css">
+	<link href='http://fonts.googleapis.com/css?family=Sigmar+One' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="js/angular.js" type="text/javascript"></script>
+	<script src="js/app.js" type="text/javascript"></script>
+	<script src="js/controller.js" type="text/javascript"></script>
 	<title>Super Mario: Tic Tac Toe</title>
 </head>
-<body>
-
-<div>
-		<h1>It's TIC TAC TOE with MARIO!!!!!</h1>
-	</div>
+<body ng-app="app">
+	<div ng-controller="MainController as main">
+	<!-- the constructer function MainController is actually "created by the ng-controller directive, the MainController is essentially an object in HTML"  -->
 	
-<div id="container">
+		<div>
+			<h1>It's TIC TAC TOE with MARIO!!!!!</h1>
+		</div>
 
-	<div id="mario">
-	<img src="mario.jpg">
-</div>
+		<div id="container">
 
-	<div id="board">
-		
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		
-	</div><!-- end board -->
+			<div id="mario">
+			<img id="redPic" src="images/mario.jpg">
+
+				<section>
+			
+				</section>
+			</div><!-- end mario -->
+
+			<div id="board">
+			
+				<div ng-repeat="square in main.spaces" ng-click="main.showX(square)" class="space">
+					<!-- ng-repeat is creating 9 divs. We are giving them the alias "square". These "squares" are tied to self.spaces in the MainController. ng-click is calling the function showX() created in MainController  -->
+					<h2>{{ square.space }}</h2>
+						<!-- this is accessing the object in the main for spaces and displaying its contents  -->
+				</div>
+
+				<!-- <div class="space"></div>
+				<div class="space"></div>
+				<div class="space"></div>
+				<div class="space"></div>
+				<div class="space"></div>
+				<div class="space"></div>
+				<div class="space"></div>
+				<div class="space"></div>  -->
+			
+			</div><!-- end board -->
 
 
 
-<div id="luigi">
-	<img src="luigi.jpeg">
-</div>
+			<div id="luigi">
+				<img id="greenPic" src="images/luigi.jpeg">
+
+					<section>
+			
+					</section>
+			</div><!-- end luigi -->
 
 
-</div><!-- end container -->
+	</div><!-- end container -->
+
+</div><!-- end controller -->
+
+
+
+
 
 
 </body>
