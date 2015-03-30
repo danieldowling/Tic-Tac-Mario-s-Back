@@ -14,7 +14,7 @@
 	<!-- the constructer function MainController is actually "created by the ng-controller directive, the MainController is essentially an object in HTML"  -->
 	
 		<div>
-			<h1>It's TIC TAC TOE with MARIO!!!!!</h1>
+			<h1>TIC TAC MARIO'S BACK</h1>
 		</div>
 
 		<div id="container">
@@ -22,27 +22,19 @@
 			<div id="mario">
 			<img id="redPic" src="images/mario.jpg">
 
-				<section>
-			
-				</section>
+				<button id="marioTurn">Mario's Turn</button>
+
 			</div><!-- end mario -->
 
 			<div id="board">
 			
-				<div ng-repeat="square in main.spaces" ng-click="main.showX(square)" class="space">
+				<div ng-repeat="square in main.spaces" ng-click="main.playGame(square)" class="space">
 					<!-- ng-repeat is creating 9 divs. We are giving them the alias "square". These "squares" are tied to self.spaces in the MainController. ng-click is calling the function showX() created in MainController  -->
 					<h2>{{ square.space }}</h2>
 						<!-- this is accessing the object in the main for spaces and displaying its contents  -->
 				</div>
 
-				<!-- <div class="space"></div>
-				<div class="space"></div>
-				<div class="space"></div>
-				<div class="space"></div>
-				<div class="space"></div>
-				<div class="space"></div>
-				<div class="space"></div>
-				<div class="space"></div>  -->
+				
 			
 			</div><!-- end board -->
 
@@ -51,15 +43,14 @@
 			<div id="luigi">
 				<img id="greenPic" src="images/luigi.jpeg">
 
-					<section>
-			
-					</section>
+					<button id="luigiTurn">Luigi's Turn</button>
+		
 			</div><!-- end luigi -->
 
 
-	</div><!-- end container -->
+		</div><!-- end container -->
 
-</div><!-- end controller -->
+	</div><!-- end controller -->
 
 
 

@@ -15,16 +15,61 @@ angular
 					{space: ""},
 					{space: ""},
 					{space: ""},
-					];
-			console.log(self.spaces)
+					];	
 
-		self.showX = showX;
+		
+		self.playGame = playGame;
+		var count = 0;
+		
 
 
-	function showX(square){
+
+/////////////////////////////////////////////
+//////////////////functions//////////////////
+/////////////////////////////////////////////
+
+	//this function off sets turns, X goes then O goes
+	function playGame(square){
 		console.log("working");
-		square.space = "X";
+		var index = self.spaces.indexOf(square);
+		
+		
+	//we are using a variable "count" to determine who gets to move next
+			if (count % 2 === 0){
+				if (self.spaces[index].space === "") {
+				square.space = "X";
+				count ++;
+				}
+		console.log(count);
+			} else if (count % 2 != 0) {
+				if (self.spaces[index].space === "") {
+				square.space = "O";	
+				count ++;
+				}
+			}	
+		console.log(count);
+		
 	}
-		 
-}
+
+
+
+
+
+
+
+}/*end main controller*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
