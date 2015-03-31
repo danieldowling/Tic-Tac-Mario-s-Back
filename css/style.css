@@ -16,7 +16,7 @@ h1 {
 	margin-top: 15px;
 }
 
-#container {
+#container { 
 	display: flex;
 	margin: 0 auto;
 	width: 85%;
@@ -77,12 +77,6 @@ img{
 	width: 200px;
 }
 
-h2 {
-	 margin: 0 auto;
-	 margin-top: 4px;
-	 font-size: 175px;
-}
-
 #marioTurn {
 	margin: 63px;
 	padding: 15px;
@@ -90,6 +84,7 @@ h2 {
 	color: rgb(248, 12, 33);
 	border: 3px solid rgb(248, 12, 33);
 	border-radius: 10px;
+	text-align: center;
 }
 
 #luigiTurn {
@@ -99,5 +94,20 @@ h2 {
 	color: rgb(0, 125, 42); 
 	border: 3px solid rgb(0, 125, 42);
 	border-radius: 10px;
+	text-align: center;
+}
+
+.redShell {
+	background: url(../images/Red.png);
+	background-position: center;
+	background-size: 150px;
+	background-repeat: no-repeat;
+}
+
+.greenShell {
+	background: url(../images/Green.png);
+	background-position: center;
+	background-size: 150px;
+	background-repeat: no-repeat;
 }
 

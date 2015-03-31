@@ -5,7 +5,12 @@ angular
 	function MainController(){
 		var self = this;
 		
-		
+////////////////////////////////////////////
+/////////////////variables//////////////////
+////////////////////////////////////////////
+
+
+
 		self.spaces = [{space: ""}, 
 					{space: ""}, 
 					{space: ""},
@@ -33,26 +38,21 @@ angular
 		console.log("working");
 		var index = self.spaces.indexOf(square);
 		
-		
-	//we are using a variable "count" to determine who gets to move next
 			if (count % 2 === 0){
 				if (self.spaces[index].space === "") {
-				square.space = "X";
+				square.space = true;
 				count ++;
 				}
 		console.log(count);
 			} else if (count % 2 != 0) {
 				if (self.spaces[index].space === "") {
-				square.space = "O";	
+				square.space = false;	
 				count ++;
 				}
 			}	
 		console.log(count);
 		
-	}
-
-
-
+	};//we are using a variable "count" to determine who gets to move next
 
 
 

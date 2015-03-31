@@ -20,31 +20,19 @@
 		<div id="container">
 
 			<div id="mario">
-			<img id="redPic" src="images/mario.jpg">
-
-				<button id="marioTurn">Mario's Turn</button>
-
+				<img id="redPic" src="images/mario.jpg">
+				<div id="marioTurn">Mario's Turn</div>
 			</div><!-- end mario -->
 
 			<div id="board">
-			
-				<div ng-repeat="square in main.spaces" ng-click="main.playGame(square)" class="space">
+				<div ng-repeat="square in main.spaces" ng-click="main.playGame(square)" class="space" ng-class="{redShell: square.space === true, greenShell: square.space === false}">
 					<!-- ng-repeat is creating 9 divs. We are giving them the alias "square". These "squares" are tied to self.spaces in the MainController. ng-click is calling the function showX() created in MainController  -->
-					<h2>{{ square.space }}</h2>
-						<!-- this is accessing the object in the main for spaces and displaying its contents  -->
-				</div>
-
-				
-			
+				</div>	
 			</div><!-- end board -->
-
-
 
 			<div id="luigi">
 				<img id="greenPic" src="images/luigi.jpeg">
-
-					<button id="luigiTurn">Luigi's Turn</button>
-		
+					<div id="luigiTurn">Luigi's Turn</div>
 			</div><!-- end luigi -->
 
 
