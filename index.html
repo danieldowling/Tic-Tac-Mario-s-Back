@@ -5,6 +5,8 @@
 	<link href='http://fonts.googleapis.com/css?family=Sigmar+One' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<script src="js/angular.js" type="text/javascript"></script>
+	<script src="https://cdn.firebase.com/js/client/2.2.2/firebase.js"></script>
+	<script src="https://cdn.firebase.com/libs/angularfire/1.0.0/angularfire.min.js"></script>
 	<script src="js/app.js" type="text/javascript"></script>
 	<script src="js/controller.js" type="text/javascript"></script>
 	<title>Super Mario: Tic Tac Toe</title>
@@ -14,25 +16,25 @@
 	<!-- the constructer function MainController is actually "created by the ng-controller directive, the MainController is essentially an object in HTML"  -->
 	
 		<div>
-			<h1>TIC TAC MARIO'S BACK</h1>
+			<h1>TIC TAC MARIO</h1>
 		</div>
 
 		<div id="container">
 
 			<div id="mario">
-				<img id="redPic" src="images/mario.jpg">
-				<div id="marioTurn">Mario's Turn</div>
+				<img id="redPic" src="images/mario2.jpg">
+				<div ng-class="marioTurn" id="marioTurn">Mario's Turn</div>
 			</div><!-- end mario -->
 
 			<div id="board">
-				<div ng-repeat="square in main.spaces" ng-click="main.playGame(square)" class="space" ng-class="{redShell: square.space === true, greenShell: square.space === false}">
+				<div ng-repeat="square in main.gamePlay.spaces" ng-click="main.playerMove(square)" class="move" ng-class="{redShell: square.move === true, greenShell: square.move === false}">
 					<!-- ng-repeat is creating 9 divs. We are giving them the alias "square". These "squares" are tied to self.spaces in the MainController. ng-click is calling the function showX() created in MainController  -->
 				</div>	
 			</div><!-- end board -->
 
 			<div id="luigi">
-				<img id="greenPic" src="images/luigi.jpeg">
-					<div id="luigiTurn">Luigi's Turn</div>
+				<img id="greenPic" src="images/luigi2.jpg">
+					<div ng-class="luigiTurn" id="luigiTurn">Luigi's Turn</div>
 			</div><!-- end luigi -->
 
 

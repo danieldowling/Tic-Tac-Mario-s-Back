@@ -2,67 +2,66 @@ angular
 	.module("app")
 	.controller("MainController", MainController);
 
-	function MainController(){
+	MainController.$inject = ['$firebaseObject']
+
+	function MainController($firebaseObject) {
 		var self = this;
-		
-////////////////////////////////////////////
-/////////////////variables//////////////////
-////////////////////////////////////////////
+		self.gamePlay = gamePlay();
+		self.playerMove = playerMove;
 
 
 
-		self.spaces = [{space: ""}, 
-					{space: ""}, 
-					{space: ""},
-					{space: ""},
-					{space: ""},
-					{space: ""},
-					{space: ""},
-					{space: ""},
-					{space: ""},
-					];	
+		function gamePlay() {  //"global" function created to push data to firebase
+			var ref = new Firebase ('https://tic-tac-mario.firebaseio.com/');
+			var gameData = $firebaseObject(ref); //variable being referenced in firebase
 
-		
-		self.playGame = playGame;
-		var count = 0;
-		
+			gameData.spaces = [];
 
+			for (i = 0; i < 9; i ++) {
+				gameData.spaces.push({move: ''})
+			};
+				// {move: ''},
+				// {move: ''},
+				// {move: ''},
+				// {move: ''},
+				// {move: ''},
+				// {move: ''},
+				// {move: ''},
+				// {move: ''},
+				// {move: ''}
+			
 
+			gameData.marioTurn = true;
+			gameData.luigiTurn = false;
 
-/////////////////////////////////////////////
-//////////////////functions//////////////////
-/////////////////////////////////////////////
+			gameData.$save();
 
-	//this function off sets turns, X goes then O goes
-	function playGame(square){
-		console.log("working");
-		var index = self.spaces.indexOf(square);
-		
-			if (count % 2 === 0){
-				if (self.spaces[index].space === "") {
-				square.space = true;
-				count ++;
-				}
-		console.log(count);
-			} else if (count % 2 != 0) {
-				if (self.spaces[index].space === "") {
-				square.space = false;	
-				count ++;
-				}
-			}	
-		console.log(count);
-		
-	};//we are using a variable "count" to determine who gets to move next
+			return gameData;
 
+		}/* end gamePlay */
 
+		function playerMove(square) {
 
+			console.log("hello");
+			if (self.gamePlay.marioTurn === true) {
+				square.move = true;
+				self.gamePlay.marioTurn = false;
+				self.gamePlay.$save();
+			
+			} else if (self.gamePlay.luigiTurn === false) {
+				square.move = false;
+				self.gamePlay.marioTurn = true;
+				self.gamePlay.$save();
+			}
 
-}/*end main controller*/
+			
+		}/* end playerMove */
 
-
-
-
-
+		function getWinner() {
+			if (square.move[1],[2],[3] === true){
+				
+			}
+		}
 
 
 
@@ -73,3 +72,5 @@ angular
 
 
 
+
+	}/*end MainController*/

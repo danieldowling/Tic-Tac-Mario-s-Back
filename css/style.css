@@ -37,7 +37,7 @@ h1 {
 	padding: 10px;
 }
 
-.space {
+.move {
 	justify-content: center;
 	width: 32.7%;
 	margin: 1.5px;
@@ -102,12 +102,14 @@ img{
 	background-position: center;
 	background-size: 150px;
 	background-repeat: no-repeat;
+	background-color: rgb(104, 153, 248);
 }
 
 .greenShell {
 	background: url(../images/Green.png);
 	background-position: center;
-	background-size: 150px;
+	background-size: 140px;
 	background-repeat: no-repeat;
+	background-color: rgb(104, 153, 248);
 }
 
