@@ -1,12 +1,12 @@
 body {
-	background-image: url("http://th03.deviantart.net/fs10/PRE/i/2006/133/9/7/Idyllic_Mario_by_blendmaster.png");
+	background-image: url(../images/background.jpg);
 }
 
 h1 {
 	text-align: center;
 	color: rgb(104, 153, 248);
 	border: 4px solid white;
-	background-image: url(http://i.imgur.com/c2tR5fo.png);
+	background-image: url(../images/c2tR5Fo.png);
 	padding: 30px;
 	border-radius: 50px;
 	width: 80%;
@@ -67,6 +67,7 @@ h1 {
 #greenPic {
 	border: 3px solid rgb(0, 125, 42);
 	background-color: rgb(0, 125, 42);
+	transform: scaleX(-1);
 }
 
 img{
@@ -103,6 +104,11 @@ img{
 	background-size: 150px;
 	background-repeat: no-repeat;
 	background-color: rgb(104, 153, 248);
+	transition: .7s ease-in-out;
+}
+
+.redShell:hover {
+	transform: rotate(180deg);
 }
 
 .greenShell {
@@ -111,5 +117,32 @@ img{
 	background-size: 140px;
 	background-repeat: no-repeat;
 	background-color: rgb(104, 153, 248);
+	transition: .7s ease-in-out;
+}
+
+.greenShell:hover {
+	transform: rotate(180deg);
+}
+
+.reset {
+	width: 70%;
+	margin: 0 auto;
+	margin-top: 20px;
+	padding: 30px;
+	border: 4px solid white;
+	border-radius: 40px;
+	background: url(../images/c2tR5Fo.png);
+
+}
+
+#resetButton {
+	width: 50%;
+	margin-left: 218px;
+	padding: 30px;
+	border-radius: 40px;
+	color: white;
+	background-color: rgb(104, 153, 248);
+	border: 4px solid white;
+	font-size: 22px;
 }
 

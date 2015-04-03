@@ -23,24 +23,26 @@
 
 			<div id="mario">
 				<img id="redPic" src="images/mario2.jpg">
-				<div ng-class="marioTurn" id="marioTurn">Mario's Turn</div>
+				<div ng-show="main.gamePlay.makeMove === true" ng-class="marioTurn" id="marioTurn">Mario's Turn</div>
 			</div><!-- end mario -->
 
 			<div id="board">
-				<div ng-repeat="square in main.gamePlay.spaces" ng-click="main.playerMove(square)" class="move" ng-class="{redShell: square.move === true, greenShell: square.move === false}">
-					<!-- ng-repeat is creating 9 divs. We are giving them the alias "square". These "squares" are tied to self.spaces in the MainController. ng-click is calling the function showX() created in MainController  -->
+				<div ng-repeat="square in main.gamePlay.spaces" ng-click="main.playerMove(square)" class="move" ng-class="{redShell: square.move === true, greenShell: square.move === false}">	
 				</div>	
 			</div><!-- end board -->
 
 			<div id="luigi">
 				<img id="greenPic" src="images/luigi2.jpg">
-					<div ng-class="luigiTurn" id="luigiTurn">Luigi's Turn</div>
+				<div ng-show="main.gamePlay.makeMove === false" ng-class="luigiTurn" id="luigiTurn">Luigi's Turn</div>
 			</div><!-- end luigi -->
-
 
 		</div><!-- end container -->
 
-	</div><!-- end controller -->
+		<div class="reset">
+			<button ng-click="main.clearBoard(square)" id="resetButton">PLAY AGAIN</button>	
+		</div> --><!-- end reset -->
+
+	</div><!--end controller -->
 
 
 
