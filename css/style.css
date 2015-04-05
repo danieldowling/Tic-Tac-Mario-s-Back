@@ -175,8 +175,8 @@ img{
 	transform: rotate(360deg);
 }
 
-/*.noWin {
-	background: url(../images/MarioFace.png);
+.noWin {
+	background: url(../images/ToadFace.png);
 	background-position: center;
 	background-size: 140px;
 	background-repeat: no-repeat;

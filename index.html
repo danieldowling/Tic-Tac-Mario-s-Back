@@ -29,7 +29,7 @@
 			<div id="board">
 
 
-				<div ng-repeat="square in main.gamePlay.spaces" ng-click="main.playerMove(square)" class="move" ng-class="{redShell: square.move === true, greenShell: square.move === false, marioWins: square.move === 1, luigiWins: square.move === 2}">
+				<div ng-repeat="square in main.gamePlay.spaces" ng-click="main.playerMove(square)" class="move" ng-class="{redShell: square.move === true, greenShell: square.move === false, marioWins: square.move === 1, luigiWins: square.move === 2, noWin: square.move === 3}">
 				
 				</div> <!-- end ng-repeat -->	
 			</div><!-- end board -->

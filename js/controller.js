@@ -24,6 +24,7 @@ angular
 				
 			
 			gameData.makeMove = true;
+			gameData.counter = 0;
 			gameData.winner = "";
 			
 			/*gameData.$loaded(function(){
@@ -49,6 +50,7 @@ angular
 			if (self.gamePlay.makeMove === true) {
 				if (square.move === "") {
 				square.move = true;
+				self.gamePlay.counter += 1;
 				self.gamePlay.makeMove = false;
 				self.getWinner();
 				self.displayWinner();
@@ -57,6 +59,7 @@ angular
 			} else if (self.gamePlay.makeMove === false) {
 				if (square.move === "") {
 				square.move = false;
+				self.gamePlay.counter += 1;
 				self.gamePlay.makeMove = true;
 				self.getWinner();
 				self.displayWinner();
@@ -138,7 +141,8 @@ angular
 				console.log("luigi wins diagonal");
 				console.log(self.gamePlay.winner);
 
-			} else {
+			} else if (self.gamePlay.counter === 9) {
+				self.gamePlay.winner = null;
 				console.log('tie'); //still need to adjust for a tie
 			}
 			
@@ -162,7 +166,12 @@ angular
 				for (i = 0; i < 9; i ++){
 					self.gamePlay.spaces[i].move = 2;
 				}
-			} 
+			} else if (self.gamePlay.winner === null) {
+					
+				for (i = 0; i < 9; i ++){
+					self.gamePlay.spaces[i].move = 3;
+				}
+			}
 		}
 
 
@@ -176,6 +185,7 @@ angular
 				self.gamePlay.spaces[i].move = "";
 				self.gamePlay.makeMove = true;
 				self.gamePlay.winner = "";
+				self.gamePlay.counter = 0;
 				self.gamePlay.$save();
 				console.log("board has been cleared")
 			}
