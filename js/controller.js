@@ -13,7 +13,7 @@ angular
 		self.displayWinner = displayWinner;
 
 		function gamePlay() {  //"global" function created to push data to firebase
-			var ref = new Firebase ('https://tic-tac-mario.firebaseio.com/');
+			var ref = new Firebase ('https://tic-tac-mario2.firebaseio.com/');
 			var gameData = $firebaseObject(ref); //variable being referenced in firebase
 
 			gameData.spaces = [];
