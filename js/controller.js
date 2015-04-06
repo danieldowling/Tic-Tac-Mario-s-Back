@@ -194,7 +194,4 @@ angular
 
 
 
-
-
-
 	}/*end MainController*/
